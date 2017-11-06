@@ -16,7 +16,7 @@
     "build": "npm run build:css && npm run build:js && npm run build:img",
     "watch:css": "onchange 'assets/scss/*.scss' -- npm run build:css",
     "watch:js": "onchange 'assets/js/*.js' -- npm run build:js",
-    "watch": "npm-run-all --parallel watch:css watch:js"
+    "watch": "npm-run-all --parallel watch:*"
   },
   "devDependencies": {
     "clean-css-cli": "^4.1.10",
