@@ -1,0 +1,30 @@
+{
+  "name": "npm-scripts",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "scss": "node-sass -o dist/css assets/scss/style.scss",
+    "concat:css": "concat -o dist/css/styles.css dist/css/style.css assets/css/test.css",
+    "concat:js": "mkdir -p dist/js && concat -o dist/js/scripts.js assets/js/test1.js assets/js/test2.js",
+    "concat": "npm run concat:css && npm run concat:js",
+    "cssmin": "cleancss -o dist/css/styles.min.css dist/css/styles.css",
+    "uglify": "uglifyjs -o dist/js/scripts.min.js dist/js/scripts.js",
+    "imagemin": "imagemin --out-dir=dist/img assets/img/**/*.{png,jpg,gif}",
+    "build:css": "npm run scss && npm run concat:css && npm run cssmin",
+    "build:js": "npm run concat:js && npm run uglify",
+    "build:img": "npm run imagemin",
+    "build": "npm run build:css && npm run build:js && npm run build:img",
+    "watch:css": "onchange 'assets/scss/*.scss' -- npm run build:css",
+    "watch:js": "onchange 'assets/js/*.js' -- npm run build:js",
+    "watch": "npm-run-all --parallel watch:css watch:js"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^4.1.10",
+    "concat": "^1.0.3",
+    "imagemin-cli": "^3.0.0",
+    "node-sass": "^4.6.0",
+    "npm-run-all": "^4.1.1",
+    "onchange": "^3.2.1",
+    "uglify-js": "^3.1.7"
+  }
+}
