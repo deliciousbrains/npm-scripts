@@ -9,7 +9,7 @@
     "concat": "npm run concat:css && npm run concat:js",
     "cssmin": "cleancss -o dist/css/styles.min.css dist/css/styles.css",
     "uglify": "uglifyjs -o dist/js/scripts.min.js dist/js/scripts.js",
-    "imagemin": "imagemin --out-dir=dist/img assets/img/**/*.{png,jpg,gif}",
+    "squoosh": "squoosh-cli --mozjpeg '{quality:70}' assets/img -d dist/img",
     "build:css": "npm run scss && npm run concat:css && npm run cssmin",
     "build:js": "npm run concat:js && npm run uglify",
     "build:img": "npm run imagemin",
