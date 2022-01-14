@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "private": true,
   "scripts": {
-    "scss": "node-sass -o dist/css assets/scss/style.scss",
+    "scss": "sass assets/scss/style.scss dist/css/style.css",
     "concat:css": "concat -o dist/css/styles.css dist/css/style.css assets/css/test.css",
     "concat:js": "mkdir -p dist/js && concat -o dist/js/scripts.js assets/js/test1.js assets/js/test2.js",
     "concat": "npm run concat:css && npm run concat:js",
