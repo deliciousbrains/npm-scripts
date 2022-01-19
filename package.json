@@ -12,7 +12,7 @@
     "squoosh": "squoosh-cli --mozjpeg '{quality:70}' assets/img -d dist/img",
     "build:css": "npm run scss && npm run concat:css && npm run cssmin",
     "build:js": "npm run concat:js && npm run uglify",
-    "build:img": "npm run imagemin",
+    "build:img": "npm run squoosh",
     "build": "npm run build:css && npm run build:js && npm run build:img",
     "watch:css": "onchange 'assets/scss/*.scss' -- npm run build:css",
     "watch:js": "onchange 'assets/js/*.js' -- npm run build:js",
